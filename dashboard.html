@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Blood Donation Management System</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="brand">🩸 Blood Donation</h2>
+
+        <ul class="menu">
+            <li class="active">Dashboard</li>
+            <li>Donors</li>
+            <li>Blood Stock</li>
+            <li>Recipients</li>
+            <li>Hospitals</li>
+            <li>Blood Tests</li>
+            <li>Blood Camps</li>
+            <li>Transport</li>
+            <li>Staff</li>
+            <li>Feedback</li>
+        </ul>
+
+        <div class="logout">Logout</div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <div>
+                <h1>Dashboard Overview</h1>
+                <p class="subtitle">Blood Donation Management System</p>
+            </div>
+            <div class="profile">Admin</div>
+        </div>
+
+        <!-- Summary Cards -->
+        <section class="stats">
+            <div class="stat-card red">
+                <p>Total Donors</p>
+                <h2>1,247</h2>
+            </div>
+
+            <div class="stat-card blue">
+                <p>Blood Bags Available</p>
+                <h2>680</h2>
+            </div>
+
+            <div class="stat-card green">
+                <p>Successful Donations</p>
+                <h2>789</h2>
+            </div>
+
+            <div class="stat-card orange">
+                <p>Hospitals Registered</p>
+                <h2>156</h2>
+            </div>
+        </section>
+
+        <!-- Bottom Section -->
+        <section class="dashboard-bottom">
+
+            <!-- Recent Activities -->
+            <div class="panel">
+                <h3>Recent Donation Activities</h3>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Donor Name</th>
+                            <th>Blood Group</th>
+                            <th>Date</th>
+                            <th>Hospital</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mahatab Islam</td>
+                            <td>O+</td>
+                            <td>15 days ago</td>
+                            <td>Dhaka Medical</td>
+                            <td class="success">Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Mahabubur Rahman</td>
+                            <td>A+</td>
+                            <td>1 month ago</td>
+                            <td>Square Hospital</td>
+                            <td class="success">Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Ashraful Islam</td>
+                            <td>B+</td>
+                            <td>10 days ago</td>
+                            <td>Popular Diagnostic</td>
+                            <td class="pending">Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Sraboni Biswas</td>
+                            <td>A-</td>
+                            <td>2 months ago</td>
+                            <td>United Hospital</td>
+                            <td class="success">Completed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Quick Status -->
+            <div class="panel">
+                <h3>System Status</h3>
+
+                <div class="status-box">
+                    <p>Emergency Requests</p>
+                    <h2>12 Active</h2>
+                </div>
+
+                <div class="status-box">
+                    <p>Blood Camps This Month</p>
+                    <h2>6 Camps</h2>
+                </div>
+
+                <div class="status-box">
+                    <p>Low Stock Alerts</p>
+                    <h2>3 Types</h2>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

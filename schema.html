@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blood Donation Management System – Schema</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f8;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.schema{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:20px;
+}
+
+.box{
+    background:#fff;
+    border:2px solid #c62828;
+    border-radius:10px;
+    padding:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.08);
+}
+
+.box h3{
+    text-align:center;
+    color:#c62828;
+    margin-bottom:10px;
+    font-size:16px;
+}
+
+.box ul{
+    list-style:none;
+    font-size:13px;
+}
+
+.box li{
+    margin-bottom:4px;
+}
+
+.pk{ color:#1565c0; font-weight:bold; }
+.fk{ color:#2e7d32; font-weight:bold; }
+</style>
+</head>
+
+<body>
+
+<h1>Blood Donation Management System – Database Schema</h1>
+
+<div class="schema">
+
+<!-- 1 -->
+<div class="box">
+<h3>DONOR</h3>
+<ul>
+<li class="pk">PK: D_ID</li>
+<li>D_NAME</li>
+<li>D_GENDER</li>
+<li>D_AGE</li>
+<li>D_PHONE</li>
+<li>D_BLOOD_GROUP</li>
+<li>D_BLOOD_TYPE</li>
+<li>D_LAST_DONATION_DATE</li>
+<li class="fk">FK: X_ID</li>
+</ul>
+</div>
+
+<!-- 2 -->
+<div class="box">
+<h3>ELIGIBILITY</h3>
+<ul>
+<li class="pk">PK: E_ID</li>
+<li>MAX_AGE</li>
+<li>MIN_AGE</li>
+<li>MIN_WEIGHT</li>
+<li>MONTHS_BETWEEN_DONATION</li>
+<li class="fk">FK: D_ID</li>
+</ul>
+</div>
+
+<!-- 3 -->
+<div class="box">
+<h3>DONOR_LOCATION</h3>
+<ul>
+<li class="pk">PK: X_ID</li>
+<li>D_CITY</li>
+<li>D_COUNTRY</li>
+</ul>
+</div>
+
+<!-- 4 -->
+<div class="box">
+<h3>NUTRITION_SUPPORT</h3>
+<ul>
+<li class="pk">PK: N_ID</li>
+<li>N_DATE</li>
+<li>ITEM_PROVIDED</li>
+<li class="fk">FK: D_ID</li>
+</ul>
+</div>
+
+<!-- 5 -->
+<div class="box">
+<h3>DONATION</h3>
+<ul>
+<li class="pk">PK: DONATION_ID</li>
+<li>DONATION_DATE</li>
+<li>DONATION_VOLUME</li>
+<li>DONATION_BLOOD_TYPE</li>
+<li class="fk">FK: D_ID</li>
+</ul>
+</div>
+
+<!-- 6 -->
+<div class="box">
+<h3>BLOOD_TEST</h3>
+<ul>
+<li class="pk">PK: T_ID</li>
+<li>MALARIA_STATUS</li>
+<li>HEMOGLOBIN_LEVEL</li>
+<li>HIV_STATUS</li>
+<li>HEPATITIS_STATUS</li>
+<li>T_DATE</li>
+<li class="fk">FK: DONATION_ID</li>
+</ul>
+</div>
+
+<!-- 7 -->
+<div class="box">
+<h3>BLOOD_BAG</h3>
+<ul>
+<li class="pk">PK: B_ID</li>
+<li>B_STATUS</li>
+<li>B_TYPE</li>
+<li>B_GROUP</li>
+<li>B_VOLUME</li>
+<li>B_EXP_DATE</li>
+<li class="fk">FK: DONATION_ID</li>
+</ul>
+</div>
+
+<!-- 8 -->
+<div class="box">
+<h3>HOSPITAL</h3>
+<ul>
+<li class="pk">PK: H_ID</li>
+<li>H_NAME</li>
+<li>H_PHONE</li>
+<li>H_EMAIL</li>
+<li>H_CAPACITY</li>
+<li class="fk">FK: Y_ID</li>
+</ul>
+</div>
+
+<!-- 9 -->
+<div class="box">
+<h3>HOSPITAL_LOCATION</h3>
+<ul>
+<li class="pk">PK: Y_ID</li>
+<li>H_CITY</li>
+<li>H_COUNTRY</li>
+</ul>
+</div>
+
+<!-- 10 -->
+<div class="box">
+<h3>BLOOD_STORAGE</h3>
+<ul>
+<li class="fk">FK: B_ID</li>
+<li class="fk">FK: H_ID</li>
+</ul>
+</div>
+
+<!-- 11 -->
+<div class="box">
+<h3>TRANSPORT</h3>
+<ul>
+<li class="pk">PK: TRANSPORT_ID</li>
+<li>TRANSPORT_DATE</li>
+<li>FROM_LOCATION</li>
+<li>TO_LOCATION</li>
+<li>TEMP_CONTROLLED</li>
+<li class="fk">FK: B_ID</li>
+</ul>
+</div>
+
+<!-- 12 -->
+<div class="box">
+<h3>BLOOD_CAMP</h3>
+<ul>
+<li class="pk">PK: C_ID</li>
+<li>C_EXPECTED_DONORS</li>
+<li>C_DATE</li>
+<li>C_LOCATION</li>
+<li>C_ORGANIZER</li>
+<li class="fk">FK: H_ID</li>
+</ul>
+</div>
+
+<!-- 13 -->
+<div class="box">
+<h3>STAFF</h3>
+<ul>
+<li class="pk">PK: S_ID</li>
+<li>S_NAME</li>
+<li>S_PHONE</li>
+<li>S_ROLE</li>
+<li>S_EMAIL</li>
+<li class="fk">FK: H_ID</li>
+</ul>
+</div>
+
+<!-- 14 -->
+<div class="box">
+<h3>CAMP_STAFF</h3>
+<ul>
+<li class="fk">FK: C_ID</li>
+<li class="fk">FK: S_ID</li>
+</ul>
+</div>
+
+<!-- 15 -->
+<div class="box">
+<h3>RECIPIENT</h3>
+<ul>
+<li class="pk">PK: R_ID</li>
+<li>R_NAME</li>
+<li>R_AGE</li>
+<li>R_GENDER</li>
+<li>R_PHONE</li>
+<li>R_BLOOD_TYPE_NEEDED</li>
+<li>R_BLOOD_GROUP</li>
+<li>R_DISEASE</li>
+<li class="fk">FK: Z_ID</li>
+</ul>
+</div>
+
+<!-- 16 -->
+<div class="box">
+<h3>RECIPIENT_LOCATION</h3>
+<ul>
+<li class="pk">PK: Z_ID</li>
+<li>R_CITY</li>
+<li>R_COUNTRY</li>
+</ul>
+</div>
+
+<!-- 17 -->
+<div class="box">
+<h3>BLOOD_RECEIVE</h3>
+<ul>
+<li class="fk">FK: B_ID</li>
+<li class="fk">FK: R_ID</li>
+</ul>
+</div>
+
+<!-- 18 -->
+<div class="box">
+<h3>FEEDBACK</h3>
+<ul>
+<li class="pk">PK: F_ID</li>
+<li>F_DATE</li>
+<li>COMMENT</li>
+<li>RATING</li>
+<li class="fk">FK: R_ID</li>
+</ul>
+</div>
+
+</div>
+
+</body>
+</html>

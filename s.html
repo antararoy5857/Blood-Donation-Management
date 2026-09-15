@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blood Donation ER Diagram</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f6f8;
+}
+
+.diagram{
+    position:relative;
+    width:1600px;
+    height:1100px;
+    margin:30px auto;
+}
+
+/* BOX STYLE */
+.box{
+    position:absolute;
+    width:240px;
+    background:#fff;
+    border:2px solid #000;
+    border-radius:6px;
+    padding:10px;
+    font-size:13px;
+}
+
+.box h3{
+    text-align:center;
+    margin:0 0 6px;
+    font-size:14px;
+    text-transform:uppercase;
+}
+
+/* SVG LINES */
+svg{
+    position:absolute;
+    top:0;
+    left:0;
+    width:1600px;
+    height:1100px;
+    pointer-events:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="diagram">
+
+<!-- ================= SVG CONNECTIONS ================= -->
+<svg>
+    <!-- Donor → Eligibility -->
+    <line x1="220" y1="160" x2="220" y2="270" stroke="black"/>
+
+    <!-- Donor → Donor Location -->
+    <line x1="340" y1="120" x2="540" y2="120" stroke="black"/>
+
+    <!-- Donor → Donation -->
+    <line x1="220" y1="220" x2="220" y2="420" stroke="black"/>
+
+    <!-- Donation → Blood Test -->
+    <line x1="220" y1="500" x2="220" y2="640" stroke="black"/>
+
+    <!-- Donation → Blood Bag -->
+    <line x1="340" y1="460" x2="540" y2="460" stroke="black"/>
+
+    <!-- Blood Bag → Hospital -->
+    <line x1="660" y1="460" x2="900" y2="460" stroke="black"/>
+
+    <!-- Hospital → Hospital Location -->
+    <line x1="1020" y1="500" x2="1020" y2="640" stroke="black"/>
+
+    <!-- Blood Bag → Transport -->
+    <line x1="540" y1="520" x2="540" y2="720" stroke="black"/>
+
+    <!-- Blood Bag → Recipient -->
+    <line x1="660" y1="460" x2="900" y2="800" stroke="black"/>
+
+    <!-- Recipient → Recipient Location -->
+    <line x1="1020" y1="860" x2="1020" y2="980" stroke="black"/>
+</svg>
+
+<!-- ================= BOXES ================= -->
+
+<!-- DONOR -->
+<div class="box" style="top:80px; left:100px;">
+<h3>DONOR</h3>
+D_ID (PK)<br>
+D_NAME<br>
+D_GENDER<br>
+D_AGE<br>
+D_PHONE<br>
+D_BLOOD_GROUP<br>
+D_BLOOD_TYPE<br>
+D_LAST_DONATION_DATE<br>
+X_ID (FK)
+</div>
+
+<!-- ELIGIBILITY -->
+<div class="box" style="top:260px; left:100px;">
+<h3>ELIGIBILITY</h3>
+E_ID (PK)<br>
+MAX_AGE<br>
+MIN_AGE<br>
+MIN_WEIGHT<br>
+MONTHS_BETWEEN_DONATION<br>
+D_ID (FK)
+</div>
+
+<!-- DONOR LOCATION -->
+<div class="box" style="top:80px; left:500px;">
+<h3>DONOR_LOCATION</h3>
+X_ID (PK)<br>
+D_CITY<br>
+D_COUNTRY
+</div>
+
+<!-- DONATION -->
+<div class="box" style="top:420px; left:100px;">
+<h3>DONATION</h3>
+DONATION_ID (PK)<br>
+DONATION_DATE<br>
+DONATION_VOLUME<br>
+DONATION_BLOOD_TYPE<br>
+D_ID (FK)
+</div>
+
+<!-- BLOOD TEST -->
+<div class="box" style="top:640px; left:100px;">
+<h3>BLOOD_TEST</h3>
+T_ID (PK)<br>
+MALARIA_STATUS<br>
+HEMOGLOBIN_LEVEL<br>
+HIV_STATUS<br>
+HEPATITIS_STATUS<br>
+T_DATE<br>
+DONATION_ID (FK)
+</div>
+
+<!-- BLOOD BAG -->
+<div class="box" style="top:420px; left:500px;">
+<h3>BLOOD_BAG</h3>
+B_ID (PK)<br>
+B_STATUS<br>
+B_TYPE<br>
+B_GROUP<br>
+B_VOLUME<br>
+B_EXP_DATE<br>
+DONATION_ID (FK)
+</div>
+
+<!-- HOSPITAL -->
+<div class="box" style="top:420px; left:900px;">
+<h3>HOSPITAL</h3>
+H_ID (PK)<br>
+H_NAME<br>
+H_PHONE<br>
+H_EMAIL<br>
+H_CAPACITY<br>
+Y_ID (FK)
+</div>
+
+<!-- HOSPITAL LOCATION -->
+<div class="box" style="top:640px; left:900px;">
+<h3>HOSPITAL_LOCATION</h3>
+Y_ID (PK)<br>
+H_CITY<br>
+H_COUNTRY
+</div>
+
+<!-- TRANSPORT -->
+<div class="box" style="top:720px; left:500px;">
+<h3>TRANSPORT</h3>
+TRANSPORT_ID (PK)<br>
+TRANSPORT_DATE<br>
+FROM_LOCATION<br>
+TO_LOCATION<br>
+TEMP_CONTROLLED<br>
+B_ID (FK)
+</div>
+
+<!-- RECIPIENT -->
+<div class="box" style="top:800px; left:900px;">
+<h3>RECIPIENT</h3>
+R_ID (PK)<br>
+R_NAME<br>
+R_AGE<br>
+R_GENDER<br>
+R_PHONE<br>
+R_BLOOD_TYPE_NEEDED<br>
+R_BLOOD_GROUP<br>
+R_DISEASE<br>
+Z_ID (FK)
+</div>
+
+<!-- RECIPIENT LOCATION -->
+<div class="box" style="top:980px; left:900px;">
+<h3>RECIPIENT_LOCATION</h3>
+Z_ID (PK)<br>
+R_CITY<br>
+R_COUNTRY
+</div>
+
+</div>
+
+</body>
+</html>

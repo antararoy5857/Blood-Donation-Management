@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospitals | Blood Donation Management System</title>
+    <link rel="stylesheet" href="hospital.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="brand">🩸 Blood Donation</h2>
+
+        <ul class="menu">
+            <li>Dashboard</li>
+            <li>Donors</li>
+            <li>Blood Stock</li>
+            <li>Recipients</li>
+            <li class="active">Hospitals</li>
+            <li>Blood Tests</li>
+            <li>Blood Camps</li>
+            <li>Transport</li>
+            <li>Staff</li>
+            <li>Feedback</li>
+        </ul>
+
+        <div class="logout">Logout</div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <h1>Hospitals Management</h1>
+            <div class="profile">Admin</div>
+        </div>
+
+        <!-- Summary Cards -->
+        <section class="cards">
+            <div class="card red">
+                <p>Total Hospitals</p>
+                <h2>156</h2>
+            </div>
+
+            <div class="card green">
+                <p>Active Hospitals</p>
+                <h2>142</h2>
+            </div>
+
+            <div class="card yellow">
+                <p>Blood Storage Units</p>
+                <h2>98</h2>
+            </div>
+
+            <div class="card blue">
+                <p>Emergency Supported</p>
+                <h2>320+</h2>
+            </div>
+        </section>
+
+        <!-- Hospital Table -->
+        <section class="panel">
+            <h3>Registered Hospitals</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Hospital Name</th>
+                        <th>City</th>
+                        <th>Contact</th>
+                        <th>Blood Capacity</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dhaka Medical College Hospital</td>
+                        <td>Dhaka</td>
+                        <td>017XXXXXXXX</td>
+                        <td>1200 Units</td>
+                        <td class="active-status">Active</td>
+                    </tr>
+                    <tr>
+                        <td>Square Hospital</td>
+                        <td>Dhaka</td>
+                        <td>018XXXXXXXX</td>
+                        <td>850 Units</td>
+                        <td class="active-status">Active</td>
+                    </tr>
+                    <tr>
+                        <td>Chittagong Medical College</td>
+                        <td>Chittagong</td>
+                        <td>019XXXXXXXX</td>
+                        <td>900 Units</td>
+                        <td class="active-status">Active</td>
+                    </tr>
+                    <tr>
+                        <td>Rajshahi General Hospital</td>
+                        <td>Rajshahi</td>
+                        <td>016XXXXXXXX</td>
+                        <td>600 Units</td>
+                        <td class="inactive-status">Inactive</td>
+                    </tr>
+                    <tr>
+                        <td>Khulna City Hospital</td>
+                        <td>Khulna</td>
+                        <td>015XXXXXXXX</td>
+                        <td>500 Units</td>
+                        <td class="active-status">Active</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

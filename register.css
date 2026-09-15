@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f8f8f7;
+    min-height: 100vh;
+}
+
+/* ================= Header ================= */
+.header {
+    background: #ede396;
+    padding: 12px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #c62828;
+}
+
+/* ================= Container ================= */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0;
+}
+
+/* ================= Card ================= */
+.register-card {
+    background: #ede396;
+    width: 90%;
+    max-width: 650px;          /* 13.5 inch perfect */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+/* ================= Icon ================= */
+.icon {
+    width: 48px;
+    height: 48px;
+    background: #fdecea;
+    color: #c62828;
+    font-size: 22px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================= Title ================= */
+.register-card h2 {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.register-card p {
+    color: #555;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+/* ================= Form ================= */
+.row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.form-group {
+    flex: 1;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 12px;
+    color: #444;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-size: 13px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #c62828;
+}
+
+/* ================= Button ================= */
+.btn-register {
+    width: 100%;
+    padding: 11px;
+    background: #c62828;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.btn-register:hover {
+    background: #b71c1c;
+}
+
+/* ================= Login Text ================= */
+.login-text {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.login-text a {
+    color: #c62828;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* ================= Footer ================= */
+.footer {
+    text-align: center;
+    padding: 12px;
+    font-size: 12px;
+    color: #777;
+}
+
+/* ================= Responsive Safety ================= */
+@media (max-width: 900px) {
+    .row {
+        flex-direction: column;
+    }
+}
